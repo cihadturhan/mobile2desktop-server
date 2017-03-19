@@ -5,7 +5,10 @@ var socketio = require('socket.io');
 var app = express();
 var server = http.Server(app);
 var io = socketio(server);
-server.listen(443, () => console.log('listening on *:3000'));
+const PORT = process.env.PORT || 3000;
+console.log(PORT);
+
+server.listen(PORT, () => console.log(`listening on *:${PORT}`));
 
 // The event will be called when a client is connected.
 io.on('connection', (socket) => {
