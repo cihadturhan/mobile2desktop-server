@@ -7,6 +7,9 @@
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "engines" : {
+    "npm" : "~4.1.2"
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {
@@ -15,7 +18,7 @@
     "express": "^4.15.2",
     "http": "0.0.0",
     "moment": "^2.18.1",
-    "paste-n-sync-constants": "cihadturhan/paste-n-sync-constants",
+    "paste-n-sync-constants": "git+https://c2c1bb761694a891e0136bb6a443dee78398d410:x-oauth-basic@github.com/cihadturhan/paste-n-sync-constants.git",
     "socket.io": "^1.7.3",
     "uuid": "^3.0.1"
   }
