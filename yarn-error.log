@@ -1,0 +1,52 @@
+Arguments: 
+  /usr/local/bin/node /usr/local/bin/yarn install
+
+PATH: 
+  /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+
+Yarn version: 
+  0.21.3
+
+Node version: 
+  7.4.0
+
+Platform: 
+  darwin x64
+
+npm manifest: 
+  {
+    "name": "mobile2desktop-server",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "start": "node index.js",
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+      "aws-sdk": "^2.36.0",
+      "bcrypt": "^1.0.2",
+      "express": "^4.15.2",
+      "http": "0.0.0",
+      "moment": "^2.18.1",
+      "paste-n-sync-constants": "cihadturhan/paste-n-sync-constants",
+      "socket.io": "^1.7.3",
+      "uuid": "^3.0.1"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
+
+Trace: 
+  Error: Error connecting to repository. Please, check the url.
+      at /usr/local/lib/node_modules/yarn/lib/resolvers/exotics/hosted-git-resolver.js:162:15
+      at Generator.next (<anonymous>)
+      at step (/usr/local/lib/node_modules/yarn/node_modules/babel-runtime/helpers/asyncToGenerator.js:17:30)
+      at /usr/local/lib/node_modules/yarn/node_modules/babel-runtime/helpers/asyncToGenerator.js:28:13
+      at process._tickCallback (internal/process/next_tick.js:103:7)
