@@ -3,7 +3,6 @@ const http = require('http');
 const socketio = require('socket.io');
 const constants = require('paste-n-sync-constants');
 const dynoDBWrapper = require('./dynoDBWrapper');
-const uuidV4 = require('uuid/v4');
 const bcrypt = require('bcrypt');
 const moment = require('moment');
 
@@ -27,6 +26,10 @@ io.on('connection', (socket) => {
     let deviceUuid = null;
 
     socket.on(constants.REGISTER, (params)=> {
+        if (!params){
+            return socket.emit(constants.REGISTER_ERROR, 'Missing parameters.');
+        }
+
         console.log('Connected:    ', socket.id);
         trials += 1;
         if (trials > 5) {
@@ -127,8 +130,13 @@ io.on('connection', (socket) => {
     });
 
     socket.on(constants.JOIN, (params)=> {
+
         if(deviceUuid){
             return;
+        }
+
+        if (!params) {
+            return socket.emit(constants.JOIN_ERROR, 'Missing Parameters! Check Again');
         }
 
         if(!params.UserToken){
